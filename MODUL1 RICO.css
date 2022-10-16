@@ -1,0 +1,94 @@
+#navbar a{
+    color:aliceblue;
+    font-size: 100%;
+}
+
+body{
+    background-color:rgb(231, 249, 249);
+}
+.navbar a:hover{
+    background: rgb(91, 91, 102);
+}
+#tentangkami{
+    position: absolute;
+    top: 22%;
+    left:10%;
+    width: 500px;
+}
+#tentangkami h1{
+    color: rgb(46, 63, 77);
+}
+#tentangkami .aboutus{
+    font-size: 100%;
+    color: rgb(46, 63, 77);
+}
+#lokasikami{
+    position: absolute;
+    top: 75%;
+    left:11%;
+    width: 1200px;
+    background-color: rgb(123, 153, 153);
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+}
+#lokasikami h1{
+    color:aliceblue
+}
+#lokasikami .lokasijudul{
+    position: relative;
+    left: 40%;
+}
+#lokasikami .locationus{
+    position: relative ;
+    top: 2%;
+    left: 17%;
+}
+.logo{
+    position: absolute;
+    left: 57%;
+    top: 32%;
+}
+#jenismobil{
+    position: absolute;
+    top: 155%;
+    left:11%;
+    width: 1200px;
+    background-color: rgb(123, 153, 153);
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+}
+#jenismobil h1{
+    color: aliceblue;
+}
+#daftarreservasi{
+    position: absolute;
+    top: 315%;
+    left:11%;
+    width: 1200px;
+    background-color: rgb(123, 153, 153);
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+}
+#daftarreservasi h1{
+    color: aliceblue;
+}
+.videopromo{
+    position: absolute;
+    top: 235%;
+    left: 20%;
+}
+.videopromo h1{
+    color: rgb(46, 63, 77);
+}
+#footer{
+    position: absolute;
+    top: 400%;
+    left: 0%;
+    width: 1600px;
+    background-color: rgb(93, 96, 96);
+    border-radius: 2px;
+    padding: 10px 10px 10px 10px;
+}
+#footer h5{
+    color: whitesmoke;
+}
