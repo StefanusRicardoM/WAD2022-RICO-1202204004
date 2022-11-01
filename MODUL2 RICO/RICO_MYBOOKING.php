@@ -25,7 +25,7 @@
     <h6><center>Please Double Check your Reservation Details</center></h6>
     <br></br>
     <?php
-    $Nama = $_POST['Nama'];
+    $nama = $_POST['Nama'];
     $tanggal = $_POST['tanggal'];
     $Waktu = $_POST['Waktu'];
     $Durasi = $_POST['Durasi'];
@@ -81,7 +81,7 @@
 </thead>
 <tbody>
         <tr>
-            <td><?php echo rand() ?></td>
+            <td><?php echo rend() ?></td>
             <td><?php echo $Nama ?></td>
             <td><?php echo date('Y-m-d', strtotime($tanggal)) ;echo('|') ;echo $Waktu ?></td>
             <td><?php echo date('Y-m-d', strtotime($checkout)) ; echo('|'); echo $Waktu?></td>
