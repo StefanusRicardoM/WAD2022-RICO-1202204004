@@ -81,10 +81,10 @@
 </thead>
 <tbody>
         <tr>
-            <td><?php echo rend() ?></td>
-            <td><?php echo $Nama ?></td>
-            <td><?php echo date('Y-m-d', strtotime($tanggal)) ;echo('|') ;echo $Waktu ?></td>
-            <td><?php echo date('Y-m-d', strtotime($checkout)) ; echo('|'); echo $Waktu?></td>
+            <td><?php echo rand() ?></td>
+            <td><?php echo $nama ?></td>
+            <td><?php echo date('Y-m-d', strtotime($tanggal)) ;echo('|') ;echo $Waktu ; ?></td>
+            <td><?php echo date('Y-m-d', strtotime($checkout)) ; echo('|'); echo $Waktu; ?></td>
             <td><?php echo $Tipe ?></td>
             <td><?php echo $NoTelp ?></td>
             <td><ul><?php foreach ($service as $a){?>

@@ -42,7 +42,7 @@
         
     </div>
    <div class="col-sm-8">
-    <form action="RICO_MYBOOKING.php" method="GET">
+    <form action="RICO_MYBOOKING.php" method="POST">
   <div class="mb-3">
     <label for="Nama" class="form-label">Name</label>
     <input type="text" name="Nama" class="form-control" id="Nama" value="RICO_1202204004" readonly>
