@@ -27,7 +27,7 @@
                 <form>
                 <div class="mb-3">
                     <label for="NamaMobil" class="form-label"><strong>Nama Mobil</strong></label>
-                    <input type="text" class="form-control" id="NamaMobil" aria-describedby="Carname">
+                    <input type="text" class="form-control" id="NamaMobil" name="NamaMobil">
                 </div>
                 <div class="mb-3">
                     <label for="NamaPemilik" class="form-label"><strong>Nama Pemilik</strong></label>
