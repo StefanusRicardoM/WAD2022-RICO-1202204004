@@ -27,7 +27,7 @@
                 </ul>
                 <?php
                 if(isset($_GET['page']) && $_GET['page'] == 'MyItem'){
-                    echo '<a href="RICO_INDEX.php?page=Additem" class="nav-link bg-light text-primary margi">Add Item</a>';
+                    echo '<a href="RICO_INDEX.php?page=Additem" type="button" class="nav-link bg-light text-primary">Add Item</a>';
                 }
                 ?>
               </div>

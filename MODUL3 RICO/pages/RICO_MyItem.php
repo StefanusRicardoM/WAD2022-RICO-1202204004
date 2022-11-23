@@ -15,7 +15,7 @@
     <section id="listmobil">
     <?php
         include_once("config/Rico_connector.php");
-        $result = mysqli_query($connect, 'SELECT * FROM showroom_rico_tabel');
+        $result = mysqli_query($connect, 'SELECT * FROM showroom_rico_table');
         if ($result){
             while ($select = mysqli_fetch_array($result)){
         ?>
