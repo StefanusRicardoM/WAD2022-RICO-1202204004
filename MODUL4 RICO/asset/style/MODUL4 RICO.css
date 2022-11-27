@@ -1,0 +1,14 @@
+
+.navbar a:hover{
+    background: rgb(233, 233, 252);
+}
+#listmobil button{
+    border-radius: 25px;
+}
+.login img{
+   object-fit: cover;
+   object-position: left; 
+}
+#hide a{
+    display: none;
+  }
