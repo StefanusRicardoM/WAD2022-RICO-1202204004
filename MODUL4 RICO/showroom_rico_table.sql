@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8111:8111
--- Generation Time: Nov 23, 2022 at 01:57 AM
+-- Generation Time: Nov 29, 2022 at 05:10 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -43,7 +43,7 @@ CREATE TABLE `showroom_rico_table` (
 --
 
 INSERT INTO `showroom_rico_table` (`id_mobil`, `nama_mobil`, `pemilik_mobil`, `merk_mobil`, `tanggal_beli`, `deskripsi`, `foto_mobil`, `status_pembayaran`) VALUES
-(15, 'nono', 'mimi', 'kok', '2022-11-23', 'nono', '83792389_f0ce3ef7-7777-465c-96c3-ec238800fe43_750_750.jpeg', 'lunas');
+(1, 'sasa', 'sasa', 'sas2', '2022-11-26', '2qs', 'WhatsApp Image 2022-10-03 at 19.49.02.jpeg', 'lunas');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,7 @@ ALTER TABLE `showroom_rico_table`
 -- AUTO_INCREMENT for table `showroom_rico_table`
 --
 ALTER TABLE `showroom_rico_table`
-  MODIFY `id_mobil` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_mobil` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
