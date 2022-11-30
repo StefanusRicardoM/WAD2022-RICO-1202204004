@@ -17,7 +17,7 @@ include 'Rico_connector.php';
                 setcookie('nama', $nama, time() + (86400 * 30), "/");
                 setcookie('password', $password, time() + (86400 * 30), "/");
                 setcookie('no_hp',$no_hp, time() + (86400 * 30), "/");
-                setcookie('colour', $colour, time() + (86400 * 30), "/");
+                ('colour', $colour, time() + (86400 * 30), "/");
                 header('Location:../RICO_INDEX.php');
             }
             else{
