@@ -10,7 +10,7 @@ $row = mysqli_fetch_assoc($result);
     if($row){
         if(isset($_POST['remember'])){
             $remember = $_POST['remember'];
-            ('remember', $remember, time() + (86400 * 30), "/");
+            setcookie('remember', $remember, time() + (86400 * 30), "/");
         }
         setcookie('nama', $row['nama'], time() + (86400 * 30), "/");
         setcookie('email',$row['email'], time() + (86400 * 30), "/");

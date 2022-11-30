@@ -10,7 +10,7 @@
   <body>
   <?php
     include 'config/Rico_connector.php';
-    $email = COOKIE['email'];
+    $email = $_COOKIE['email'];
     $query = mysqli_query($connect2, "SELECT * FROM user_rico WHERE email='$email'");
     $select = mysqli_fetch_assoc($query);
     ?>
