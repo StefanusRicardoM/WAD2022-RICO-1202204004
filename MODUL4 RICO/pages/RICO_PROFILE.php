@@ -10,9 +10,15 @@
   <body>
   <?php
     include 'config/Rico_connector.php';
-    $email = $_COOKIE['email'];
-    $query = mysqli_query($connect2, "SELECT * FROM user_rico WHERE email='$email'");
-    $select = mysqli_fetch_assoc($query);
+    if (($email = $_COOKIE['email'])){
+      $query = mysqli_query($connect2, "SELECT * FROM user_rico WHERE email='$email'");
+      $select = mysqli_fetch_assoc($query);
+    }
+    else{
+      echo"";
+    }
+    
+    
     ?>
 
     <form action="config/Rico_Updateprofile.php" method="POST" enctype="multipart/form-data">
