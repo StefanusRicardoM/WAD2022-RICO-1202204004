@@ -3,7 +3,11 @@
 <div class="container" style="margin-top:60px;">
   <div class="row">
     <div class="col-5 ms-3" style="margin-top:100px;">
-      <h1>Selamat Datang di showroom RICO</h1>
+      @if(Auth::user())
+        <h1>Selamat Datang di showroom {{Auth::user()->name}}</h1>
+      @else
+        <h1>Selamat Datang di showroom</h1>
+      @endif
       <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio iure perferendis earum laborum exercitationem</p>
       <div class="d-grid gap-1 col-3">
         <a href="RICO_INDEX.php?page=MyItem" class="btn bg-primary text-white mt-3" id="<?= !isset($_COOKIE['nama']) ? 'hide' : '' ?>">MyCar</a>

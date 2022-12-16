@@ -1,18 +1,35 @@
 @extends('layout.navbar')
 @section('navbar')
-<form action="config/Rico_Updateprofile.php" method="POST" enctype="multipart/form-data">
+<form action="profile/{{Auth::user()->id}}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method("PUT")
   <br>
   <div class="Container text-center">
     <h3>PROFILE</h3>
   </div>
-  <div class="align-items-center  px-5 mt-5">
+  @if (count($errors) > 0)
+  <div class="alert alert-danger">
+      @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+      @endforeach
+  </div>
+  @endif
+  @if (Session::has('success'))
+      <div
+          class="alert alert-success">
+          {{ Session::get('success') }}
+      </div>
+  @endif
+  <form method="post" action="/profile" class="align-items-center  px-5 mt-5">
+    @csrf
+    @method("PUT")
     <div class="container overflow-hidden">
       <div class="row gy-2">
         <div class="col-3">
           <label for="exampleInputEmail1" class="form-label">Email<h8 class=text-danger>*</h8></label>
         </div>
         <div class="col-9">
-          <input type="email" class="form-control-plaintext" name="email" value="" required>
+          <input type="email" class="form-control-plaintext" name="email" value="{{Auth::user()->email}}" required>
         </div>
 
         <div class="col-3">
@@ -20,14 +37,14 @@
           </p>
         </div>
         <div class="col-9">
-          <input type="text" class="form-control" name="nama" id="exampleInputEmail1" value="" readonly>
+          <input type="text" class="form-control" name="nama" id="exampleInputEmail1" value="{{Auth::user()->name}}">
         </div>
         <div class="col-3">
           <p>Nomor Handphone<h8 class=text-danger>*</h8>
           </p>
         </div>
         <div class="col-9">
-          <input type="text" class="form-control" name="no_hp" id="exampleInputEmail1" value="" readonly>
+          <input type="text" class="form-control" name="no_hp" id="exampleInputEmail1" value="{{Auth::user()->no_hp}}">
         </div>
         <hr>
         <div class="col-3">
@@ -56,11 +73,11 @@
         </div>
       </div>
     </div>
+    <div class="text-center">
+      <br>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </div>
 </form>
-<div class="text-center">
-  <br>
-  <button type="submit" class="btn btn-primary">Update</button>
-</div>
 <br>
 <div class="container">
 

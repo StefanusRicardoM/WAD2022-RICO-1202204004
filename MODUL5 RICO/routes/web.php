@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Crudcontroller;
+use App\Http\Controllers\ShowroomController;
+use App\Http\Controllers\UserController;
+use App\Models\showroom;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -34,19 +37,25 @@ Route::get('/edititem', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/itemdetail', function () {
-    return view('itemdetail');
+Route::get('/itemdetail/{id}', function ($id) {
+    $data = showroom::find($id);
+    return view('itemdetail', ['data' => $data]);
 });
 Route::get('/myitem', function () {
-    return view('myitem');
+    $data = showroom::all();
+    $count = $data->count();
+    return view('myitem', ['data' => $data, 'count' => $count]);
 });
 Route::get('/profile', function () {
     return view('profile');
 });
-    Route::get('myitem',[Crudcontroller::class, 'myitem']);
-    Route::get('itemdetail/{id}',[Crudcontroller::class, 'itemdetail']);
-    Route::get('itemdetail',[Crudcontroller::class, 'itemdetail']);
-    Route::get('additem',[Crudcontroller::class, 'add']);
-    Route::get('edititem',[Crudcontroller::class, 'edititem']);
-    Route::resource('item',Crudcontroller::class);
 
+Route::post('additem', [ShowroomController::class, 'store']);
+Route::put('itemdetail/{id}', [ShowroomController::class, 'update']);
+Route::get('deletedetail/{id}', [ShowroomController::class, 'destroy']);
+
+Route::put('profile/{id}', [UserController::class, 'update']);
+
+Route::post('register', [UserController::class, 'store']);
+Route::post('login', [UserController::class, 'login']);
+Route::get('logout', [UserController::class, 'logout']);

@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <style>
-        
+
         #hide {
             display: none;
         }
@@ -19,54 +19,52 @@
 </head>
 
 <body>
-    <section id="navbar">
-        <nav class="navbar navbar-expand-lg bg-<?= isset($_COOKIE['colour']) ? $_COOKIE['colour'] : 'primary' ?>">
-            <div class="container text-center">
-                <a class="navbar-brand" href="#">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="/home">Home</a>
-                        </li>
-                        <li class="nav-item">
-
-                            <a id="<?= isset($_COOKIE['nama']) ? 'hide' : '' ?>" class="nav-link active text-light" href="/myitem">Mycar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="<?= isset($_COOKIE['nama']) ? 'hide' : '' ?>" class="nav-link bg-light active text-primary rounded p-2" style="margin-left: 900px;" href="/additem">Add Car</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="<?= isset($_COOKIE['nama']) ? 'hide' : '' ?>" class="nav-link active text-light rounded p-2" style="margin-left: 900px;" href="/login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <button id="<?= !isset($_COOKIE['nama']) ? 'hide' : '' ?>" class="btn btn-light dropdown-toggle text-primary" style="margin-left: 15px;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    akun
-                                </button>
-                                <ul class="dropdown-menu" style="float: right;">
-                                    <li><a class="dropdown-item text-primary" href="/profile">Profile</a></li>
-                                    <li><a class="dropdown-item text-primary" href="RICO_INDEX.php?page=logout">Log Out</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-
+    <nav class="bg-primary text-white py-3">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-2">
+              <div>
+                <a class="nav-link text-white active" aria-current="page" href="/">Home</a>
+              </div>
+              @if(Auth::user())
+                <div>
+                  <a class="nav-link text-white" aria-current="page" href="/myitem">My Car</a>
                 </div>
+              @endif
             </div>
-        </nav>
-    </section>
+            @if(Auth::user())
+            <div class="d-flex gap-3">
+              <div class="">
+                <a class="btn bg-white text-primary" aria-current="page" href="/additem">Add Car</a>
+              </div>
+              <div>
+                  <div class="btn-group">
+                      <button type="button" class="btn bg-white text-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{Auth::user()->name}}
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                      <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                      </ul>
+                  </div>
+              </div>
+            </div>
+            @else
+            <div>
+              <a class="nav-link text-white" aria-current="page" href="/login">Login</a>
+            </div>
+            @endif
+          </div>
+        </div>
+      </nav>
 
     <div class="container">
         @yield('navbar')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js%22%3E"></script>
-    <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
 </body>
 
 </html>

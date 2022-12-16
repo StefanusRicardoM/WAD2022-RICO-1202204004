@@ -7,12 +7,29 @@
              <img src="https://i0.wp.com/thewestnews.com/wp-content/uploads/2022/11/Car.jpg?fit=1920%2C1080&ssl=1" alt="" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
             </div>
             <div class="col-sm-6">
-                <br><br><br>
+                <br>
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </div>
+                @endif
+                @if (Session::has('success'))
+                    <div
+                        class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
+
+                <br>
                 <h3>Login</h3>
-                <form action="config/Rico_Login.php" method="post" enctype="multipart/form-data">
+                <form action="/login" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('POST')
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" name="email">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -29,5 +46,6 @@
         </div>
     </div>
     </section>
-    
+
+
 @endsection
